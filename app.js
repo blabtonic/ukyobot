@@ -2,10 +2,14 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const config = require("./config.json");
 
-client.on('ready', () =>{
-	console.log("I'm ready");
+client.on('ready', () => {
+	console.log("The Bot is on!");
 });
 
+client.on("guildMemberAdd", member => {
+	let guild = member.guild;
+	guild.defaultChannel.send(`Welcome ${member.user} to Canada KOF discord`);
+});
 
 client.on('message', message => {
 	if (message.author.bot) return;
