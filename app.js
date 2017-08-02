@@ -1,6 +1,17 @@
 const Discord = require('discord.js');
+const mysql = require('mysql');
 const client = new Discord.Client();
 const config = require("./config.json");
+
+var connection = mysql.createConnection({
+	host: "localhost",
+	user: "",
+	password: "",
+	database: ""
+});
+
+connection.connect();
+
 
 client.on('ready', () => {
 	console.log("The Bot is on!");
