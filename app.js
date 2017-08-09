@@ -37,7 +37,11 @@ client.on('message', message => {
 	}
 
 	if (command === 'foo'){
-	        message.channel.send('bar');
+		message.channel.send('bar');
+	}
+	
+	if (command === 'fd'){
+	    	message.channel.send('Frame-Data HERE!!!');
 	}
 
 });
